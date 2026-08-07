@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | DAIC Tech Solutions</title>
+    <meta name="description"
+        content="Explore our Cloud, Data, AI/ML, and Business Intelligence services at DAIC Tech Solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">DAIC</span> Tech Solutions
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+                <div id="auth-container"></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero" style="min-height: 40vh; align-items: flex-end; padding-bottom: 50px;">
+            <div class="container hero-content" style="max-width: 800px; text-align: center; margin: 0 auto;">
+                <h1 class="hero-title fade-in-up">Our <span class="text-gradient">Services</span></h1>
+                <p class="hero-subtitle fade-in-up" style="margin: 0 auto; animation-delay: 0.1s;">
+                    We empower businesses to transform data into actionable insights, leverage the cloud for agility and
+                    scalability, and thrive in the modern digital age.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Section from Index -->
+        <section class="services section" style="padding-top: 50px;">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card glass-card fade-in-up">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="cloud-cog" class="service-icon"></i>
+                        </div>
+                        <h3 class="service-title">Cloud Services</h3>
+                        <p class="service-text">The cloud market is complex and constantly changing. We help deploy your
+                            workloads—whether for data analytics, data lakes, or production applications—on Google Cloud
+                            Platform (GCP), AWS, and Azure smoothly and securely.</p>
+                        <ul style="color: var(--text-muted); margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                            <li>Cloud Migration Strategy</li>
+                            <li>Multi-Cloud Deployments</li>
+                            <li>Cost Optimization & Scalability</li>
+                        </ul>
+                        <a href="cloud-strategy.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card glass-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="database-zap" class="service-icon"></i>
+                        </div>
+                        <h3 class="service-title">Data Platform</h3>
+                        <p class="service-text">We build scalable, secure data lakes on leading cloud platforms to
+                            handle all your data. Modernize your data warehouse by migrating it to the cloud, delivering
+                            vastly faster performance, improved scalability, and dramatically reduced costs.</p>
+                        <ul style="color: var(--text-muted); margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                            <li>Data Lake Architecture</li>
+                            <li>Warehouse Modernization</li>
+                            <li>ETL Pipeline Automation</li>
+                        </ul>
+                        <a href="data-platforms.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card glass-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="cpu" class="service-icon"></i>
+                        </div>
+                        <h3 class="service-title">AI/ML</h3>
+                        <p class="service-text">We provide comprehensive AI/ML services, specializing in custom machine
+                            learning models tailored to your specific data and needs. Turn raw organizational data into
+                            intelligent automated reasoning.</p>
+                        <ul style="color: var(--text-muted); margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                            <li>Predictive Analytics</li>
+                            <li>Generative AI Solutions</li>
+                            <li>Computer Vision Modules</li>
+                        </ul>
+                        <a href="ai-ml.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card glass-card fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="service-icon-wrapper">
+                            <i data-lucide="line-chart" class="service-icon"></i>
+                        </div>
+                        <h3 class="service-title">Business Intelligence</h3>
+                        <p class="service-text">We provide intuitive Business Intelligence solutions that empower your
+                            business users to analyze data, create interactive dashboards, and make data-driven
+                            decisions independently, without needing to rely on IT every time.</p>
+                        <ul style="color: var(--text-muted); margin-bottom: 1.5rem; padding-left: 1.2rem;">
+                            <li>Interactive Dashboards</li>
+                            <li>Self-Service Analytics</li>
+                            <li>KPI Tracking Systems</li>
+                        </ul>
+                        <a href="business-intelligence.html" class="service-link">Learn More <i
+                                data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section section" style="padding-top: 0;">
+            <div class="container cta-container glass-card fade-in">
+                <div class="cta-content" style="text-align: center; margin: 0 auto;">
+                    <h2 class="section-title">Ready to implement these <span class="text-gradient">solutions?</span>
+                    </h2>
+                    <p class="section-description">Our expert team is here to provide tailored strategies and seamless
+                        implementation.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Contact Us Today</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-accent">DAIC</span> Tech Solutions
+                </a>
+                <p>Unlocking the power of data and cloud technology to drive digital success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 DAIC Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+
+</html>

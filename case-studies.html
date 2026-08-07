@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | DAIC Tech Solutions</title>
+    <meta name="description"
+        content="Explore our case studies to see how DAIC Tech Solutions transforms businesses through innovative cloud, data, and AI/ML solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .case-studies-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .cs-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .cs-card-img-wrapper {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid var(--glass-border);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cs-card-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .cs-card:hover .cs-card-img-wrapper img {
+            transform: scale(1.02);
+        }
+
+        .cs-card-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cs-client {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cs-bullets {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .cs-bullets li {
+            margin-bottom: 15px;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .cs-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') no-repeat center center;
+            background-size: contain;
+        }
+
+        @media (min-width: 992px) {
+            .cs-card {
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .cs-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .cs-card-img-wrapper {
+                width: 60%;
+                border-bottom: none;
+            }
+
+            .cs-card:nth-child(odd) .cs-card-img-wrapper {
+                border-right: 1px solid var(--glass-border);
+            }
+
+            .cs-card:nth-child(even) .cs-card-img-wrapper {
+                border-left: 1px solid var(--glass-border);
+            }
+
+            .cs-card-content {
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">DAIC</span> Tech Solutions
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html" class="active">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+                <div id="auth-container"></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero" style="min-height: 40vh; align-items: flex-end; padding-bottom: 50px;">
+            <div class="container hero-content" style="max-width: 900px; text-align: center; margin: 0 auto;">
+                <h1 class="hero-title fade-in-up">Our <span class="text-gradient">Work</span></h1>
+                <p class="hero-subtitle fade-in-up" style="margin: 0 auto; animation-delay: 0.1s;">
+                    At DAIC Tech Solutions, we believe that real-world results speak volumes. Explore how we've partnered with diverse businesses to overcome complex challenges, leverage innovative technologies like cloud and AI, and achieve tangible outcomes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Case Studies Section -->
+        <section class="section" style="padding-top: 50px;">
+            <div class="container fade-in-up">
+                <div class="case-studies-list">
+                    
+                    <!-- Case Study 1 -->
+                    <div class="cs-card glass-card">
+                        <div class="cs-card-img-wrapper">
+                            <img src="assets/case-study-1.png" alt="Data Integration Case Study Architecture">
+                        </div>
+                        <div class="cs-card-content">
+                            <div class="cs-client">Health Service Aggregator</div>
+                            <h3 class="cs-title">Data Integration</h3>
+                            <ul class="cs-bullets">
+                                <li><strong>50%</strong> reduction in maintenance costs</li>
+                                <li><strong>90%</strong> of data quality issues resolved</li>
+                                <li><strong>50%</strong> reduction in infrastructure costs</li>
+                                <li><strong>10x</strong> increase in provider engagement and satisfaction</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-secondary" style="align-self: flex-start;">Discuss Your Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="cs-card glass-card">
+                        <div class="cs-card-img-wrapper">
+                            <img src="assets/case-study-2.png" alt="Custom AI/ML Case Study Architecture">
+                        </div>
+                        <div class="cs-card-content">
+                            <div class="cs-client">Ed-Tech Service Provider</div>
+                            <h3 class="cs-title">Custom AI/ML</h3>
+                            <ul class="cs-bullets">
+                                <li><strong>70%</strong> reduction in time to market for ML use case lifecycles</li>
+                                <li><strong>50%</strong> reduction in combined infrastructure and storage costs</li>
+                                <li><strong>100%</strong> of teams successfully onboarded to the ML platform</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-secondary" style="align-self: flex-start;">Discuss Your Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="cs-card glass-card">
+                        <div class="cs-card-img-wrapper">
+                            <img src="assets/case-study-3.png" alt="Data Migration Case Study Architecture">
+                        </div>
+                        <div class="cs-card-content">
+                            <div class="cs-client">Large Retailer (Teradata to Azure/Snowflake/dbt)</div>
+                            <h3 class="cs-title">Data Migration</h3>
+                            <ul class="cs-bullets">
+                                <li><strong>80%+</strong> faster SELECT queries</li>
+                                <li><strong>25%</strong> improvement in data visualization processing time</li>
+                                <li><strong>40%</strong> reduction in overall platform costs</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-secondary" style="align-self: flex-start;">Discuss Your Project</a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 4 -->
+                    <div class="cs-card glass-card">
+                        <div class="cs-card-img-wrapper">
+                            <img src="assets/case-study-4.png" alt="Data Warehouse Case Study Architecture">
+                        </div>
+                        <div class="cs-card-content">
+                            <div class="cs-client">Logistics Service Provider (Oracle/SQL to BigQuery)</div>
+                            <h3 class="cs-title">Data Warehouse</h3>
+                            <ul class="cs-bullets">
+                                <li><strong>70%</strong> improvement in data availability</li>
+                                <li><strong>100%</strong> data quality resolution</li>
+                                <li><strong>60%</strong> reduction in storage costs</li>
+                                <li><strong>5x</strong> increase in processing speed</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-secondary" style="align-self: flex-start;">Discuss Your Project</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section section" style="padding-top: 50px;">
+            <div class="container cta-container glass-card fade-in">
+                <div class="cta-content" style="text-align: center; margin: 0 auto;">
+                    <h2 class="section-title">Ready to achieve <span class="text-gradient">similar results?</span></h2>
+                    <p class="section-description">Our expert team is here to provide tailored strategies and seamless implementation for your next big change.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Let's Talk</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-accent">DAIC</span> Tech Solutions
+                </a>
+                <p>Unlocking the power of data and cloud technology to drive digital success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 DAIC Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DAIC Tech Solutions</title>
+    <meta name="description"
+        content="Get in touch with DAIC Tech Solutions for your IT consulting, cloud infrastructure, and data analytics needs.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">DAIC</span> Tech Solutions
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html" class="active">Contact</a>
+                <div id="auth-container"></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero" style="min-height: 40vh; align-items: flex-end; padding-bottom: 50px;">
+            <div class="container hero-content" style="max-width: 800px; text-align: center; margin: 0 auto;">
+                <h1 class="hero-title fade-in-up">Contact <span class="text-gradient">Us</span></h1>
+                <p class="hero-subtitle fade-in-up" style="margin: 0 auto; animation-delay: 0.1s;">
+                    Reach out today. Our expert team is ready to provide tailored strategies and seamless implementation
+                    for your IT consulting needs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section from Index -->
+        <section class="contact section" style="padding-top: 50px; min-height: 60vh;">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-in-up">
+                        <div class="info-item glass-card">
+                            <div class="info-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <a href="mailto:contact@daictechsolution.com">contact@daictechsolution.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item glass-card">
+                            <div class="info-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <a href="tel:+15126708325">+91 8910743183</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item glass-card">
+                            <div class="info-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>Satguru Parinay 5,<br> 305,3rd Floor,PU3<br> Scheme No. 54, A.B.Road <br>Indore,
+                                    Madhya
+                                    Pradesh - 452010</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form glass-card fade-in-up" style="transition-delay: 0.2s;"
+                        onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="What is this regarding?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-accent">DAIC</span> Tech Solutions
+                </a>
+                <p>Unlocking the power of data and cloud technology to drive digital success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 DAIC Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+
+</html>
