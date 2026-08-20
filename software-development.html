@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development | DAIC Tech Solutions</title>
+    <meta name="description" content="Custom software development, enterprise applications, and systems integration tailored to your specific business requirements.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        .page-header {
+            padding: calc(var(--header-height) + 60px) 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(11, 20, 38, 0.9), rgba(5, 11, 20, 0.9));
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .content-section {
+            padding: 80px 0;
+            position: relative;
+        }
+        .content-wrapper {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .content-wrapper h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        .content-wrapper p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .content-wrapper h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        .content-wrapper ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        .content-wrapper ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .content-wrapper ul li::before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">DAIC</span> Tech Solutions
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+                <div id="auth-container"></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container fade-in-up">
+                <div class="badge">Service Offering</div>
+                <h1>Software Development</h1>
+                <p class="section-description">Custom software development, enterprise applications, and systems integration tailored to your specific business requirements.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="content-wrapper fade-in-up">
+                    <h2>Custom Enterprise Solutions Tailored for Efficiency</h2>
+                    <p>Standard off-the-shelf software often falls short of meeting your complex operational demands. At DAIC Tech Solutions, we design, build, and maintain custom software applications that optimize productivity, streamline internal workflows, and scale with your company's growing ecosystem. We handle everything from the initial database schema design to complex API integrations.</p>
+                    
+                    <h3>Our Key Offerings</h3>
+                    <ul>
+                        <li><strong>Enterprise Software Solutions:</strong> Powerful, scalable tools built using Java, C#, Go, and Python to handle massive volumes of enterprise data.</li>
+                        <li><strong>Cross-Platform Mobile Apps:</strong> Delivering high-performance native-feeling experiences for both iOS and Android from a single codebase using Flutter and React Native.</li>
+                        <li><strong>System Integration & APIs:</strong> Building robust APIs and microservices architectures to seamlessly connect legacy software systems, ERPs, and CRMs.</li>
+                        <li><strong>Desktop Application Suites:</strong> High-performance desktop clients tailored to offline workloads and hardware-integrated operations.</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 20px;">Explore Software Solutions</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-accent">DAIC</span> Tech Solutions
+                </a>
+                <p>Unlocking the power of data and cloud technology to drive digital success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 DAIC Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <!-- Custom Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

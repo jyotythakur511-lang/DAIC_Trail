@@ -67,4 +67,42 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.setProperty('--mouse-y', `${y}px`);
         });
     });
+
+    // 5. Save Contact Form Submissions to localStorage
+    const contactForms = document.querySelectorAll('.contact-form');
+    contactForms.forEach(form => {
+        // Remove inline onsubmit so we can handle it fully in JS
+        form.removeAttribute('onsubmit');
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            const nameEl = form.querySelector('#name');
+            const emailEl = form.querySelector('#email');
+            const subjectEl = form.querySelector('#subject');
+            const messageEl = form.querySelector('#message');
+            
+            const newContact = {
+                name: nameEl ? nameEl.value.trim() : '',
+                email: emailEl ? emailEl.value.trim() : '',
+                subject: subjectEl ? subjectEl.value.trim() : 'General Inquiry',
+                message: messageEl ? messageEl.value.trim() : '',
+                date: new Date().toLocaleString()
+            };
+            
+            let contacts = [];
+            try {
+                contacts = JSON.parse(localStorage.getItem('contacted_users')) || [];
+            } catch (err) {
+                contacts = [];
+            }
+            
+            contacts.unshift(newContact);
+            localStorage.setItem('contacted_users', JSON.stringify(contacts));
+            
+            alert('Thank you! Your message has been saved successfully.');
+            form.reset();
+        });
+    });
 });
+

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Records | DAIC Tech Solutions</title>
+    <meta name="description" content="View and export records of all users who have contacted DAIC Tech Solutions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        .page-header {
+            padding: calc(var(--header-height) + 60px) 0 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(11, 20, 38, 0.9), rgba(5, 11, 20, 0.9));
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .dashboard-section {
+            padding: 60px 0;
+            min-height: 60vh;
+        }
+        .dashboard-container {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .dashboard-actions {
+            display: flex;
+            gap: 15px;
+        }
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+            min-width: 800px;
+        }
+        th, td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        td {
+            color: var(--text-muted);
+        }
+        .text-main-td {
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        .badge-subject {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 50px;
+            background: rgba(112, 0, 255, 0.15);
+            border: 1px solid rgba(112, 0, 255, 0.3);
+            color: #d1b3ff;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .empty-state p {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-accent">DAIC</span> Tech Solutions
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+                <div id="auth-container"></div>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container fade-in-up">
+                <div class="badge">Admin Panel</div>
+                <h1>Contact Submissions</h1>
+                <p class="section-description">Manage and export all inquiry records from the contact form database.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <div class="dashboard-container fade-in-up">
+                    <div class="dashboard-header">
+                        <h2>Inquiry Log</h2>
+                        <div class="dashboard-actions">
+                            <button id="clear-records" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+                                <i data-lucide="trash-2" style="width: 16px; height: 16px; margin-right: 8px; vertical-align: middle;"></i>
+                                Clear Records
+                            </button>
+                            <button id="export-excel" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">
+                                <i data-lucide="download" style="width: 16px; height: 16px; margin-right: 8px; vertical-align: middle;"></i>
+                                Export to Excel
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="table-wrapper" class="table-responsive">
+                        <!-- Table populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-accent">DAIC</span> Tech Solutions
+                </a>
+                <p>Unlocking the power of data and cloud technology to drive digital success.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="about.html">Why Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2024 DAIC Tech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    
+    <!-- Custom Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+    
+    <!-- Contact Dashboard Operations JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultMockData = [
+                { name: "John Doe", email: "johndoe@example.com", subject: "Cloud Migration Inquiry", message: "Hello, we are interested in migrating our data warehouses to GCP. Can you schedule a consultation call?", date: "2026-08-20, 10:30:15 AM" },
+                { name: "Jane Smith", email: "janesmith@techcorp.com", subject: "Custom AI/ML Solutions", message: "Hi! We want to integrate predictive analytics models into our sales platform. Let us know your availability.", date: "2026-08-19, 04:15:32 PM" },
+                { name: "Robert Johnson", email: "r.johnson@enterprise.io", subject: "Web App Development", message: "We need a progressive web app developed for our delivery logistics tracker. Looking for robust React developers.", date: "2026-08-18, 09:05:44 AM" }
+            ];
+
+            // Load records
+            function getRecords() {
+                let records = localStorage.getItem('contacted_users');
+                if (!records) {
+                    // Prepopulate with mock data
+                    localStorage.setItem('contacted_users', JSON.stringify(defaultMockData));
+                    return defaultMockData;
+                }
+                try {
+                    return JSON.parse(records);
+                } catch (e) {
+                    return defaultMockData;
+                }
+            }
+
+            function renderTable() {
+                const records = getRecords();
+                const tableWrapper = document.getElementById('table-wrapper');
+
+                if (records.length === 0) {
+                    tableWrapper.innerHTML = `
+                        <div class="empty-state">
+                            <i data-lucide="inbox"></i>
+                            <h3>No submissions yet</h3>
+                            <p>Submissions from the contact form will show up here.</p>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    return;
+                }
+
+                let html = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date Submitted</th>
+                                <th>Contact Name</th>
+                                <th>Email Address</th>
+                                <th>Subject</th>
+                                <th>Message Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                records.forEach(rec => {
+                    html += `
+                        <tr>
+                            <td>${rec.date}</td>
+                            <td class="text-main-td">${escapeHTML(rec.name)}</td>
+                            <td><a href="mailto:${escapeHTML(rec.email)}" style="color: var(--primary); text-decoration: none;">${escapeHTML(rec.email)}</a></td>
+                            <td><span class="badge-subject">${escapeHTML(rec.subject)}</span></td>
+                            <td style="max-width: 350px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHTML(rec.message)}">
+                                ${escapeHTML(rec.message)}
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                html += `
+                        </tbody>
+                    </table>
+                `;
+
+                tableWrapper.innerHTML = html;
+            }
+
+            function escapeHTML(str) {
+                return str
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+
+            // Export to CSV Function
+            document.getElementById('export-excel').addEventListener('click', () => {
+                const records = getRecords();
+                if (records.length === 0) {
+                    alert('No records available to export.');
+                    return;
+                }
+
+                // Create CSV string
+                // Headers
+                let csvContent = "data:text/csv;charset=utf-8,";
+                csvContent += "Date Submitted,Contact Name,Email Address,Subject,Message Details\r\n";
+
+                records.forEach(rec => {
+                    // Escape quotes for CSV compliance
+                    const dateVal = `"${rec.date.replace(/"/g, '""')}"`;
+                    const nameVal = `"${rec.name.replace(/"/g, '""')}"`;
+                    const emailVal = `"${rec.email.replace(/"/g, '""')}"`;
+                    const subjectVal = `"${rec.subject.replace(/"/g, '""')}"`;
+                    const messageVal = `"${rec.message.replace(/"/g, '""')}"`;
+
+                    csvContent += `${dateVal},${nameVal},${emailVal},${subjectVal},${messageVal}\r\n`;
+                });
+
+                // Download Link
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "contacted_users.csv");
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+
+            // Clear Records Function
+            document.getElementById('clear-records').addEventListener('click', () => {
+                if (confirm('Are you sure you want to clear all submission logs? This action cannot be undone.')) {
+                    localStorage.setItem('contacted_users', JSON.stringify([]));
+                    renderTable();
+                }
+            });
+
+            // Initialize
+            renderTable();
+        });
+    </script>
+</body>
+</html>
